@@ -1,0 +1,37 @@
+# Magento 2 specific files and directories to ignore
+/vendor/
+/generated/
+/var/
+/pub/static/
+/pub/media/
+/app/bootstrap.php
+/.idea/
+/composer.phar
+/.gitmodules
+
+# Environment specific files
+/.env
+/.phpstorm.meta.php
+/.vscode
+
+# Logs and other temporary files
+*.log
+*.cache
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies
+/node_modules
+
+# Composer lock file for certain environments
+composer.lock
+
+# Configuration files for deployment and environment settings
+/deploy
+/.env.*
+/.env
+/.vagrant
+/.vbox

@@ -1,0 +1,14 @@
+{
+    "name": "TestTheme/mytheme",
+    "description": "Magento 2 custom theme by MrDanh",
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "magento/framework": "*"
+    },
+    "type": "magento2-theme",
+    "version": "1.0.0",
+    "license": ["OSL-3.0", "AFL-3.0"],
+    "autoload": {
+        "files": ["registration.php"]
+    }
+}

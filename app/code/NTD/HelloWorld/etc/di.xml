@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="NTD_HelloWorld::productName" type="NTD\HelloWorld\Plugin\Catalog\ProductAroundCustom" sortOrder="1" />
+        <arguments>
+            <argument name="productCollectionFactory" xsi:type="object">Magento\Catalog\Model\ResourceModel\Product\CollectionFactory</argument>
+            <argument name="resultRawFactory" xsi:type="object">Magento\Framework\Controller\Result\RawFactory</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/layout.xsd">
+  <referenceBlock name="product.info.addtocart">
+    <block class="Magento\Cms\Block\Block" name="custom_block" before="-">
+      <arguments>
+        <argument name="block_id" xsi:type="string">gioi-thieu</argument>
+      </arguments>
+    </block>
+  </referenceBlock>
+</layout>

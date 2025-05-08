@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="NTD_HelloWorld::helloworld"
+            title="HelloWorld"
+            module="NTD_HelloWorld"
+            sortOrder="50"
+            parent="Magento_Backend::marketing"
+            resource="NTD_HelloWorld::helloworld"
+        />
+        <add
+            id="NTD_HelloWorld::index"
+            title="Helloworld Index"
+            module="NTD_HelloWorld"
+            sortOrder="55"
+            parent="NTD_HelloWorld::helloworld"
+            action="helloworld/index/"
+            resource="NTD_HelloWorld::index"
+        />
+        <add
+            id="NTD_HelloWorld::subscription"
+            title="Subscriptions"
+            module="NTD_HelloWorld"
+            sortOrder="70"
+            parent="NTD_HelloWorld::helloworld"
+            action="helloworld/subscription/"
+            resource="NTD_HelloWorld::subscription"
+        />
+        <add
+            id="NTD_HelloWorld::component"
+            title="Components"
+            module="NTD_HelloWorld"
+            sortOrder="80"
+            parent="NTD_HelloWorld::helloworld"
+            action="helloworld/component/"
+            resource="NTD_HelloWorld::helloworld"
+        />
+    </menu>
+</config>
