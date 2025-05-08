@@ -1,0 +1,16 @@
+<?php /** @var \Magenest\Movie\Block\Movie $block */ ?>
+<?php
+$movies = $block->getMovieCollection();
+?>
+<?php if ($movies && count($movies) > 0): ?>
+    <?php foreach ($movies as $movie): ?>
+        <div class="movie-item">
+            <h3><?= htmlspecialchars($movie->getData('name')) ?></h3>
+            <p><strong>Description:</strong> <?= htmlspecialchars($movie->getData('description')) ?></p>
+            <p><strong>Rating:</strong> <?= htmlspecialchars($movie->getData('rating')) ?></p>
+            <p><strong>Director:</strong> <?= htmlspecialchars($movie->getData('director_name')) ?></p>
+        </div>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>No movies found.</p>
+<?php endif; ?>
