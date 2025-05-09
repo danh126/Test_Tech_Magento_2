@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dataSource name="movie_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest\Movie\Model\Movie\DataProvider</argument>
+            <argument name="name" xsi:type="string">movie_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">movie_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <field name="name">
+            <settings>
+                <label translate="true">Movie Name</label>
+                <dataType>text</dataType>
+                <formElement>input</formElement>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    
+    <dataSource name="movie_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest\Movie\Model\Movie\DataProvider</argument>
+            <argument name="name" xsi:type="string">movie_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">movie_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+    </dataSource>
+
+    <columns name="movie_columns">
+        <column name="movie_id">
+            <settings>
+                <label>ID</label>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <label>Movie Name</label>
+            </settings>
+        </column>
+        <!-- Thêm các column khác nếu có -->
+    </columns>
+</listing>

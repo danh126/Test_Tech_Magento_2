@@ -7,6 +7,9 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magenest_Movie::config" title="Magenest Config" sortOrder="90"/>
                 </resource>
+                <resource id="Magenest_Movie::main_menu" title="Movie Menu" sortOrder="10">
+                    <resource id="Magenest_Movie::movie" title="Movies List" sortOrder="20"/>
+                </resource>
             </resource>
         </resources>
     </acl>
