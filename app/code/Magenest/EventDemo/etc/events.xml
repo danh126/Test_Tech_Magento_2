@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="magenest_movie_save">
+        <observer name="magenest_reset_movie_rating" instance="Magenest\EventDemo\Observer\ResetMovieRating"/>
+    </event>
+</config>
