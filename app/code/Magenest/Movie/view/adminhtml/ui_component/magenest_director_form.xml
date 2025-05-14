@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- UI Form để tạo/sửa đạo diễn -->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">magenest_director_form.magenest_director_form_data_source</item>
+            <item name="deps" xsi:type="string">magenest_director_form.magenest_director_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Director Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+        </item>
+    </argument>
+
+    <dataSource name="magenest_director_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest\Movie\Model\Director\DataProvider</argument>
+            <argument name="name" xsi:type="string">magenest_director_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">director_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="magenest_director_form_data_source" />
+    </dataSource>
+
+    <fieldset name="general">
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Director Name</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <settings>
+        <buttons>
+            <button name="back">
+                <argument name="data" xsi:type="array">
+                    <item name="url" xsi:type="string">*/*/index</item>
+                </argument>
+            </button>
+            <button name="save" class="Magento\Ui\Component\Control\ContainerButton\Submit" />
+        </buttons>
+    </settings>
+</form>

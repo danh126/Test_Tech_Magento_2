@@ -1,23 +1,56 @@
 <?php
-
+/**
+ * Webkul Grid Controller
+ *
+ * @category    Webkul
+ * @package     Webkul_Grid
+ * @author      Webkul Software Private Limited
+ *
+ */
 namespace Magenest\Movie\Controller\Adminhtml\Movie;
 
-use Magento\Backend\App\Action;
-use Magento\Framework\View\Result\PageFactory;
-
-class Index extends Action
+class Index extends \Magento\Backend\App\Action
 {
-    protected $resultPageFactory;
-    public function __construct(Action\Context $context, PageFactory $resultPageFactory)
+    /**
+     * @var \Magento\Framework\View\Result\PageFactory
+     */
+    protected $_resultPageFactory;
+
+    /**
+     * @param \Magento\Backend\App\Action\Context        $context
+     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+     */
+    public function __construct(
+        \Magento\Backend\App\Action\Context $context,
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+    ) 
     {
-        $this->resultPageFactory = $resultPageFactory;
         parent::__construct($context);
+        $this->_resultPageFactory = $resultPageFactory;
     }
+
+    /**
+     * Grid List page.
+     *
+     * @return \Magento\Backend\Model\View\Result\Page
+     */
     public function execute()
     {
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Magenest_Movie::movie');
-        $resultPage->getConfig()->getTitle()->prepend(__('Movie List'));
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        $resultPage = $this->_resultPageFactory->create();
+        $resultPage->setActiveMenu('Webkul_Grid::grid_list');
+        $resultPage->getConfig()->getTitle()->prepend(__('Grid List'));
+
         return $resultPage;
+    }
+
+    /**
+     * Check Grid List Permission.
+     *
+     * @return bool
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Webkul_Grid::grid_list');
     }
 }

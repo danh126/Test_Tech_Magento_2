@@ -6,7 +6,6 @@
              title="Movie"
              module="Magenest_Movie"
              sortOrder="10"
-             parent="Magento_Backend::content"
              resource="Magenest_Movie::main_menu"/>
 
         <add id="Magenest_Movie::movie"
@@ -16,5 +15,13 @@
              action="magenest/movie/index"
              parent="Magenest_Movie::main_menu"
              resource="Magenest_Movie::movie"/>
+
+        <add id="Magenest_Movie::director"
+             title="Directors"
+             module="Magenest_Movie"
+             sortOrder="10"
+             parent="Magenest_Movie::main_menu"
+             action="magenest/director/index"
+             resource="Magenest_Movie::director"/>
     </menu>
 </config>

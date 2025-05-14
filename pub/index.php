@@ -8,10 +8,6 @@
 
 use Magento\Framework\App\Bootstrap;
 
-//$_SERVER['MAGE_RUN_CODE'] = 'vn'; // <-- code của Store View
-//$_SERVER['MAGE_RUN_TYPE'] = 'store';
-
-
 try {
     require __DIR__ . '/../app/bootstrap.php';
 } catch (\Exception $e) {
