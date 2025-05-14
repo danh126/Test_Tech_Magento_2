@@ -1,13 +1,11 @@
 <?php
 
-namespace Magenest\Movie\Model\Movie;
+namespace Magenest\Movie\Ui\DataProvider\Actor;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
-use Magento\Framework\Api\FilterBuilder;
-use Magento\Framework\Api\Search\SearchCriteriaBuilder;
-use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
+use Magenest\Movie\Model\ResourceModel\Actor\CollectionFactory;
 
-class DataProvider extends AbstractDataProvider
+class ListingDataProvider extends AbstractDataProvider
 {
     protected $loadedData;
 
@@ -30,17 +28,10 @@ class DataProvider extends AbstractDataProvider
         }
 
         $items = $this->collection->getItems();
-        $data = [];
-
         foreach ($items as $item) {
-            $data[] = $item->getData();
+            $this->loadedData[$item->getId()] = $item->getData();
         }
-
-        $this->loadedData = [
-            'items' => $data,
-            'totalRecords' => $this->collection->getSize(),
-        ];
-
+        
         return $this->loadedData;
     }
 }

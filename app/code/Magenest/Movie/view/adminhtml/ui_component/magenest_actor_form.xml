@@ -2,16 +2,16 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">magenest_movie_form.magenest_movie_form_data_source</item>
+            <item name="provider" xsi:type="string">magenest_actor_form.magenest_actor_form_data_source</item>
         </item>
     </argument>
-    <dataSource name="magenest_movie_form_data_source">
+    <dataSource name="magenest_actor_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Ui\DataProvider\ModifierPoolDataProvider</argument>
-            <argument name="name" xsi:type="string">magenest_movie_form_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">movie_id</argument>
+            <argument name="name" xsi:type="string">magenest_actor_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">actor_id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
-            <argument name="collection" xsi:type="object">Magenest\Movie\Model\ResourceModel\Movie\Collection</argument>
+            <argument name="collection" xsi:type="object">Magenest\Movie\Model\ResourceModel\Actor\Collection</argument>
         </argument>
     </dataSource>
     <fieldset name="general">
@@ -20,7 +20,7 @@
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="label" xsi:type="string">Movie Name</item>
+                    <item name="label" xsi:type="string">Actor Name</item>
                     <item name="dataScope" xsi:type="string">name</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>

@@ -1,7 +1,6 @@
 <?php
 
-// Controller/Adminhtml/Director/Save.php
-namespace Magenest\Movie\Controller\Adminhtml\Director;
+namespace Magenest\Movie\Controller\Adminhtml\Actor;
 
 use Magento\Backend\App\Action;
 use Magenest\Movie\Model\DirectorFactory;
@@ -22,15 +21,15 @@ class Save extends Action
         if ($data) {
             try {
                 $model = $this->directorFactory->create();
-                if (isset($data['director_id'])) {
-                    $model->load($data['director_id']);
+                if (isset($data['actor_id'])) {
+                    $model->load($data['actor_id']);
                 }
                 $model->setData($data)->save();
-                $this->messageManager->addSuccessMessage(__('Director saved successfully.'));
+                $this->messageManager->addSuccessMessage(__('Actor saved successfully.'));
                 return $this->_redirect('*/*/');
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage(__('Error while saving director: ') . $e->getMessage());
-                return $this->_redirect('*/*/edit', ['id' => $data['director_id'] ?? null]);
+                return $this->_redirect('*/*/edit', ['id' => $data['actor_id'] ?? null]);
             }
         }
         return $this->_redirect('*/*/');

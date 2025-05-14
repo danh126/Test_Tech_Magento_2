@@ -1,11 +1,11 @@
 <?php
 
-namespace Magenest\Movie\Model\Director;
+namespace Magenest\Movie\Ui\DataProvider\Movie;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
-use Magenest\Movie\Model\ResourceModel\Director\CollectionFactory;
+use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
 
-class DataProvider extends AbstractDataProvider
+class ListingDataProvider extends AbstractDataProvider
 {
     protected $loadedData;
 
@@ -27,8 +27,7 @@ class DataProvider extends AbstractDataProvider
             return $this->loadedData;
         }
 
-        $items = $this->collection->getItems();
-        foreach ($items as $item) {
+        foreach ($this->collection->getItems() as $item) {
             $this->loadedData[$item->getId()] = $item->getData();
         }
 

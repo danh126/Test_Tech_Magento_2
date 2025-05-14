@@ -23,5 +23,13 @@
              parent="Magenest_Movie::main_menu"
              action="magenest/director/index"
              resource="Magenest_Movie::director"/>
+
+          <add id="Magenest_Movie::actor"
+             title="Actors"
+             module="Magenest_Movie"
+             sortOrder="10"
+             parent="Magenest_Movie::main_menu"
+             action="magenest/actor/index"
+             resource="Magenest_Movie::actor"/>
     </menu>
 </config>
