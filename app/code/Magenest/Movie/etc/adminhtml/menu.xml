@@ -11,9 +11,9 @@
         <add id="Magenest_Movie::movie"
              title="Movies"
              module="Magenest_Movie"
-             sortOrder="20"
-             action="magenest/movie/index"
+             sortOrder="10"
              parent="Magenest_Movie::main_menu"
+             action="magenest/movie/index"
              resource="Magenest_Movie::movie"/>
 
         <add id="Magenest_Movie::director"

@@ -10,4 +10,15 @@ class Actor extends AbstractModel
     {
         $this->_init(\Magenest\Movie\Model\ResourceModel\Actor::class);
     }
+
+    public function getId()
+    {
+        return $this->getData('actor_id');
+    }
+
+    public function setId($value)
+    {
+        return $this->setData('actor_id', $value);
+    }
+
 }

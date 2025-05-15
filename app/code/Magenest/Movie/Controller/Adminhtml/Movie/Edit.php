@@ -3,32 +3,30 @@
 namespace Magenest\Movie\Controller\Adminhtml\Movie;
 
 use Magento\Backend\App\Action;
-use Magento\Framework\View\Result\PageFactory;
+use Magento\Backend\App\Action\Context;
 use Magenest\Movie\Model\MovieFactory;
-use Magento\Framework\Registry;
+use Magento\Framework\View\Result\PageFactory;
 
 class Edit extends Action
 {
     protected $resultPageFactory;
-    protected $directorFactory;
-    protected $registry;
+    protected $movieFactory;
 
     public function __construct(
-        Action\Context $context,
+        Context $context,
         PageFactory $resultPageFactory,
-        MovieFactory $directorFactory,
-        Registry $registry
+        MovieFactory $movieFactory
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
-        $this->directorFactory = $directorFactory;
-        $this->registry = $registry;
+        $this->movieFactory = $movieFactory;
     }
 
     public function execute()
     {
         $id = $this->getRequest()->getParam('id');
-        $model = $this->directorFactory->create();
+        $model = $this->movieFactory->create();
+
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
@@ -37,9 +35,9 @@ class Edit extends Action
             }
         }
 
-        $this->registry->register('current_movie', $model);
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Movie') : __('Add Movie'));
+        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Movie') : __('New Movie'));
+
         return $resultPage;
     }
 }

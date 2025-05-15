@@ -10,4 +10,15 @@ class Director extends AbstractModel
     {
         $this->_init(\Magenest\Movie\Model\ResourceModel\Director::class);
     }
+
+    public function getId()
+    {
+        return $this->getData('director_id');
+    }
+
+    public function setId($value)
+    {
+        return $this->setData('director_id', $value);
+    }
+
 }

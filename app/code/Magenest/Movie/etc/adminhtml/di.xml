@@ -2,8 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
-    <!-- Movie -->
-    <virtualType name="Magenest\Movie\Model\ResourceModel\Movie\Collection"
+    <virtualType name="Magenest\Movie\Ui\DataProvider\Movie\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">magenest_movie</argument>
@@ -11,18 +10,16 @@
         </arguments>
     </virtualType>
 
-    <!-- Director -->
-    <virtualType name="Magenest\Movie\Model\ResourceModel\Director\Collection"
-             type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="Magenest\Movie\Ui\DataProvider\Director\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">magenest_director</argument>
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Director</argument>
         </arguments>
     </virtualType>
 
-    <!-- Actor -->
-    <virtualType name="Magenest\Movie\Model\ResourceModel\Actor\Collection"
-        type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="Magenest\Movie\Ui\DataProvider\Actor\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">magenest_actor</argument>
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor</argument>
@@ -33,9 +30,9 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="magenest_movie_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Movie\Collection</item>
-                <item name="magenest_director_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Director\Collection</item>
-                <item name="magenest_actor_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor\Collection</item>
+                <item name="magenest_movie_listing_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Movie\Collection</item>
+                <item name="magenest_director_listing_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Director\Collection</item>
+                <item name="magenest_actor_listing_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Actor\Collection</item>
             </argument>
         </arguments>
     </type>
