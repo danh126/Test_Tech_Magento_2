@@ -1,0 +1,60 @@
+<div class="frontend-test">
+    <h1>Front End Test từ module Magenest!</h1>
+
+    <button type="button" id="btn-alert">Click Me 1 (Alert)</button>
+    <button type="button" id="btn-login">Click Me 2 (Login Modal)</button>
+    <button type="button" id="btn-other">Click Me 3 (Khác)</button>
+</div>
+
+<!-- Hidden login modal content -->
+<div id="login-modal" style="display:none;">
+    <form>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+        'Magento_Ui/js/modal/modal'
+    ], function ($, alert, modal) {
+        $(document).ready(function () {
+            // Click nút 1 → hiện alert
+            $('#btn-alert').on('click', function () {
+                alert({
+                    title: 'Thông báo',
+                    content: 'Hello World từ Magento Modal!',
+                    actions: {
+                        always: function () {}
+                    }
+                });
+            });
+    
+            // Cấu hình modal login cho nút 2
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: 'Đăng nhập nè',
+                buttons: []
+            };
+            var popup = modal(options, $('#login-modal'));
+    
+            $('#btn-login').on('click', function () {
+                $('#login-modal').modal('openModal');
+            });
+    
+            // Click nút 3 (tuỳ ý) – ví dụ: console log
+            $('#btn-other').on('click', function () {
+                console.log('Bạn đã bấm nút 3!');
+                // Hoặc có thể làm gì khác ở đây
+            });
+        });
+    });
+</script>
+    
