@@ -1,18 +1,18 @@
 <?php
 return [
     'backend' => [
-        'frontName' => 'admin'
+        'frontName' => 'admin_a58jvm'
     ],
     'cache' => [
         'graphql' => [
-            'id_salt' => 'HhGWCvJpjmjcMpJnr9TQoWgVX7oHq5Es'
+            'id_salt' => '8YGDWrucFdl4CgN3XEvhg3ledFGS7MAZ'
         ],
         'frontend' => [
             'default' => [
-                'id_prefix' => 'f73_'
+                'id_prefix' => '35b_'
             ],
             'page_cache' => [
-                'id_prefix' => 'f73_'
+                'id_prefix' => '35b_'
             ]
         ],
         'allow_parallel_generation' => false
@@ -24,7 +24,7 @@ return [
         'consumers_wait_for_messages' => 1
     ],
     'crypt' => [
-        'key' => '55ed2675d6cee86b9aac9da99ad40ba0'
+        'key' => 'cd45eae6626c5e4a29a6321bf802f696'
     ],
     'db' => [
         'table_prefix' => '',
@@ -32,8 +32,8 @@ return [
             'default' => [
                 'host' => 'localhost',
                 'dbname' => 'magentodb',
-                'username' => 'magentouser',
-                'password' => 'MyPassword',
+                'username' => 'magento',
+                'password' => 'magento123',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',
@@ -62,8 +62,8 @@ return [
     ],
     'cache_types' => [
         'config' => 1,
-        'layout' => 0,
-        'block_html' => 0,
+        'layout' => 1,
+        'block_html' => 1,
         'collections' => 1,
         'reflection' => 1,
         'db_ddl' => 1,
@@ -72,14 +72,19 @@ return [
         'customer_notification' => 1,
         'config_integration' => 1,
         'config_integration_api' => 1,
-        'full_page' => 0,
+        'full_page' => 1,
         'config_webservice' => 1,
         'translate' => 1
     ],
     'downloadable_domains' => [
-        'example.local.com'
+        'magento.local'
     ],
     'install' => [
-        'date' => 'Tue, 08 Apr 2025 09:06:01 +0000'
+        'date' => 'Sat, 17 May 2025 07:21:24 +0000'
+    ],
+    'dev' => [
+        'debug' => [
+            'debug_logging' => 1
+        ]
     ]
 ];

@@ -330,6 +330,7 @@ return [
         'Magenest_EventDemo' => 1,
         'Magenest_FrontendTest' => 1,
         'Magenest_Movie' => 1,
+        'Magenest_SalesPatch' => 1,
         'Mageplaza_Core' => 1,
         'NTD_CustomerAttribute' => 1,
         'NTD_Demo' => 1,
