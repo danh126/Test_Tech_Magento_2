@@ -329,7 +329,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magenest_EventDemo' => 1,
         'Magenest_FrontendTest' => 1,
-        'Magenest_Movie' => 1,
+        'Magenest_Movie' => 0,
         'Magenest_SalesPatch' => 1,
         'Mageplaza_Core' => 1,
         'NTD_CustomerAttribute' => 1,
