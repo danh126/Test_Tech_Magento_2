@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <menu>
+        <!-- Menu chính -->
+        <add id="Magenest_CustomDashboard::dashboard"
+             title="Custom Dashboard"
+             module="Magenest_CustomDashboard"
+             sortOrder="50"
+             resource="Magenest_CustomDashboard::dashboard"/>
+
+        <!-- Group (Section) - KHÔNG có action -->
+        <add id="Magenest_CustomDashboard::module_stats"
+             title="Module Statistics"
+             module="Magenest_CustomDashboard"
+             sortOrder="10"
+             parent="Magenest_CustomDashboard::dashboard"
+             resource="Magenest_CustomDashboard::dashboard" />
+
+        <!-- Submenu dưới group -->
+        <add id="Magenest_CustomDashboard::stats"
+             title="Statistics Page"
+             module="Magenest_CustomDashboard"
+             sortOrder="20"
+             parent="Magenest_CustomDashboard::module_stats"
+             action="magenest_dashboard/stats/index"
+             resource="Magenest_CustomDashboard::stats"/>
+    </menu>
+</config>
