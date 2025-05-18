@@ -3,41 +3,23 @@
 namespace Magenest\Movie\Controller\Adminhtml\Movie;
 
 use Magento\Backend\App\Action;
-use Magento\Backend\App\Action\Context;
-use Magenest\Movie\Model\MovieFactory;
 use Magento\Framework\View\Result\PageFactory;
 
 class Edit extends Action
 {
     protected $resultPageFactory;
-    protected $movieFactory;
 
-    public function __construct(
-        Context $context,
-        PageFactory $resultPageFactory,
-        MovieFactory $movieFactory
-    ) {
+    public function __construct(Action\Context $context, PageFactory $resultPageFactory)
+    {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
-        $this->movieFactory = $movieFactory;
     }
 
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
-        $model = $this->movieFactory->create();
-
-        if ($id) {
-            $model->load($id);
-            if (!$model->getId()) {
-                $this->messageManager->addErrorMessage(__('This movie no longer exists.'));
-                return $this->_redirect('*/*/');
-            }
-        }
-
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Movies') : __('New Movies'));
-
+        $resultPage->setActiveMenu('Magenest_Movie::movie');
+        $resultPage->getConfig()->getTitle()->prepend(__('Edit/Create Movie'));
         return $resultPage;
     }
 }
