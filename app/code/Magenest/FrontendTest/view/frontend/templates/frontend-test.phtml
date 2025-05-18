@@ -1,0 +1,19 @@
+<div id="ko-example" class="frontend-test">
+    <h2>Demo KnockoutJS - Real-time Greeting</h2>
+
+    <label for="name">Nhập tên bạn:</label>
+    <input type="text" data-bind="value: username" placeholder="VD: Danh" />
+
+    <p data-bind="visible: username">Xin chào, <strong data-bind="text: username"></strong>!</p>
+</div>
+
+<script type="text/javascript">
+    require(['ko', 'domReady!'], function(ko) {
+        function ViewModel() {
+            this.username = ko.observable('');
+        }
+
+        // Áp dụng KO cho div có id 'ko-example'
+        ko.applyBindings(new ViewModel(), document.getElementById('ko-example'));
+    });
+</script>

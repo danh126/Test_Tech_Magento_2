@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Sales\Ui\Component\DataProvider">
+        <arguments>
+            <argument name="addFieldStrategies" xsi:type="array">
+                <item name="odd_even" xsi:type="object">Magenest\SalesPatch\Ui\Component\Listing\Column\OddEven</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
