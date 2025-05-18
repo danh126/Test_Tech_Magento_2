@@ -329,6 +329,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magenest_ConfigurableImageChange' => 1,
         'Magenest_CustomAdmin' => 1,
+        'Magenest_CustomProductSection' => 1,
         'Magenest_EventDemo' => 1,
         'Magenest_FrontendTest' => 1,
         'Magenest_Movie' => 1,
