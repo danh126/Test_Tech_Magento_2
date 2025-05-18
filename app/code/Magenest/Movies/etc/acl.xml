@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magenest_Movies::config" title="Magenest Config" sortOrder="90"/>
+                </resource>
+                <resource id="Magenest_Movies::main_menu" title="Movie Menu" sortOrder="10">
+                    <resource id="Magenest_Movies::movie" title="Movies List" sortOrder="20"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
