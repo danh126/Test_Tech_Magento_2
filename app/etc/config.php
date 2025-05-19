@@ -329,6 +329,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magenest_AccessTime' => 1,
         'Magenest_B2BBanner' => 1,
+        'Magenest_Blog' => 1,
         'Magenest_ConfigurableImageChange' => 1,
         'Magenest_CourseProduct' => 1,
         'Magenest_CustomAdmin' => 1,
