@@ -334,6 +334,7 @@ return [
         'Magenest_EventDemo' => 1,
         'Magenest_ExportOrderItems' => 1,
         'Magenest_FrontendTest' => 1,
+        'Magenest_HelloWidget' => 1,
         'Magenest_Movie' => 0,
         'Magenest_SalesPatch' => 1,
         'Mageplaza_Core' => 1,
