@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="access_time_fieldset" sortOrder="10">
+        <field name="access_time_data" formElement="textarea">
+            <settings>
+                <label translate="true">Access Time (days) per Customer Group (JSON format)</label>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+    </fieldset>
+</form>
