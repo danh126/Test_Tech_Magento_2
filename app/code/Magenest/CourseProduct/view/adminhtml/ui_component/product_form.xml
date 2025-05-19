@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/ui_configuration.xsd">
+
     <dataSource name="product_form_data_source">
         <dataProvider name="product_form_data_source"/>
     </dataSource>
+
+    <!-- Fieldset: Course Details -->
     <fieldset name="product-details">
         <field name="course_start_datetime">
             <argument name="data" xsi:type="array">
@@ -47,4 +50,51 @@
             </argument>
         </field>
     </fieldset>
+
+    <!-- Fieldset: Course Documents -->
+<!--    <fieldset name="course_documents_fieldset" sortOrder="100">-->
+<!--        <field name="course_documents">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/dynamic-rows</item>-->
+<!--                    <item name="label" xsi:type="string" translate="true">Tài liệu tham khảo</item>-->
+<!--                    <item name="addButtonLabel" xsi:type="string" translate="true">Thêm tài liệu</item>-->
+<!--                    <item name="template" xsi:type="string">ui/dynamic-rows/templates/grid</item>-->
+<!--                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>-->
+<!--                    <item name="columnsHeader" xsi:type="boolean">true</item>-->
+<!--                    <item name="deleteProperty" xsi:type="string">is_delete</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--            <settings>-->
+<!--                <dataType>text</dataType>-->
+<!--                <label translate="true">Tài liệu tham khảo</label>-->
+<!--            </settings>-->
+<!--            <formElements>-->
+<!--                <formElement name="dynamicRows">-->
+<!--                    <settings>-->
+<!--                        <template>ui/dynamic-rows/templates/grid</template>-->
+<!--                    </settings>-->
+<!--                    <children>-->
+<!--                        <column name="document_name">-->
+<!--                            <argument name="data" xsi:type="array">-->
+<!--                                <item name="config" xsi:type="array">-->
+<!--                                    <item name="label" xsi:type="string" translate="true">Tên tài liệu</item>-->
+<!--                                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                                </item>-->
+<!--                            </argument>-->
+<!--                        </column>-->
+<!--                        <column name="document_link">-->
+<!--                            <argument name="data" xsi:type="array">-->
+<!--                                <item name="config" xsi:type="array">-->
+<!--                                    <item name="label" xsi:type="string" translate="true">Link tài liệu</item>-->
+<!--                                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                                </item>-->
+<!--                            </argument>-->
+<!--                        </column>-->
+<!--                    </children>-->
+<!--                </formElement>-->
+<!--            </formElements>-->
+<!--        </field>-->
+<!--    </fieldset>-->
+
 </form>
