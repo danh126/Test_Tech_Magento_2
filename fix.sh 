@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo chmod -R 777 var/ pub/static/ generated/
+sudo chown -R $USER:$USER .
+php bin/magento cache:flush
+php bin/magento setup:di:compile

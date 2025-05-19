@@ -36,7 +36,7 @@ class Edit extends Action
         }
 
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Movie') : __('New Movie'));
+        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Movies') : __('New Movies'));
 
         return $resultPage;
     }

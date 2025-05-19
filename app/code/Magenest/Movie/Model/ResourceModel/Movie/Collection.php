@@ -6,8 +6,8 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection
 {
-    protected $_idFieldName = 'movie_id'; 
-    
+    protected $_idFieldName = 'movie_id';
+
     protected function _construct()
     {
         $this->_init(

@@ -19,7 +19,7 @@ class Index extends Action
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Magenest_Movie::movie');
-        $resultPage->getConfig()->getTitle()->prepend(__('Movie Listing'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Movies Listing'));
         return $resultPage;
     }
 }

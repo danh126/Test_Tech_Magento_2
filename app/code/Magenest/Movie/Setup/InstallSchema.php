@@ -34,7 +34,7 @@ class InstallSchema implements InstallSchemaInterface
                     ->setComment('Magenest Director');
             },
 
-            // Table: Magenest Movie
+            // Table: Magenest Movies
             'magenest_movie' => function () use ($setup) {
                 return $setup->getConnection()->newTable($setup->getTable('magenest_movie'))
                     ->addColumn(
@@ -79,7 +79,7 @@ class InstallSchema implements InstallSchemaInterface
                         'director_id',
                         Table::ACTION_CASCADE
                     )
-                    ->setComment('Magenest Movie');
+                    ->setComment('Magenest Movies');
             },
 
             // Table: Magenest Actor
@@ -102,7 +102,7 @@ class InstallSchema implements InstallSchemaInterface
                     ->setComment('Magenest Actor');
             },
 
-            // Table: Magenest Movie Actor (Many-to-Many)
+            // Table: Magenest Movies Actor (Many-to-Many)
             'magenest_movie_actor' => function () use ($setup) {
                 return $setup->getConnection()->newTable($setup->getTable('magenest_movie_actor'))
                     ->addColumn(
@@ -133,7 +133,7 @@ class InstallSchema implements InstallSchemaInterface
                         'actor_id',
                         Table::ACTION_CASCADE
                     )
-                    ->setComment('Magenest Movie Actor');
+                    ->setComment('Magenest Movies Actor');
             },
         ];
 

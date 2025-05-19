@@ -23,7 +23,7 @@ class Save extends Action
             $movie = $this->movieFactory->create();
             $movie->setData($data);
             $movie->save();
-            $this->messageManager->addSuccessMessage(__('Movie saved successfully.'));
+            $this->messageManager->addSuccessMessage(__('Movies saved successfully.'));
         }
 
         return $this->_redirect('magenest/movie/index');

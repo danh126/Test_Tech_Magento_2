@@ -2,6 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
+    <!-- Table Movies -->
     <virtualType name="Magenest\Movie\Ui\DataProvider\Movie\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
@@ -10,6 +11,7 @@
         </arguments>
     </virtualType>
 
+    <!-- Table Director -->
     <virtualType name="Magenest\Movie\Ui\DataProvider\Director\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
@@ -18,6 +20,7 @@
         </arguments>
     </virtualType>
 
+    <!-- Table Actor -->
     <virtualType name="Magenest\Movie\Ui\DataProvider\Actor\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
