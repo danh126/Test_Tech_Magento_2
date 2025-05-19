@@ -332,6 +332,7 @@ return [
         'Magenest_CourseProduct' => 1,
         'Magenest_CustomAdmin' => 1,
         'Magenest_CustomProductSection' => 1,
+        'Magenest_CustomerAvatar' => 1,
         'Magenest_EventDemo' => 1,
         'Magenest_ExportOrderItems' => 1,
         'Magenest_FrontendTest' => 1,
