@@ -341,6 +341,7 @@ return [
         'Magenest_FrontendTest' => 1,
         'Magenest_HelloWidget' => 1,
         'Magenest_Movie' => 1,
+        'Magenest_OfferPopup' => 1,
         'Magenest_SalesPatch' => 1,
         'Magenest_VnRegion' => 1,
         'Mageplaza_Core' => 1,
