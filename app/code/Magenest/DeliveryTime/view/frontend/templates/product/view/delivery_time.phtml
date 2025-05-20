@@ -1,0 +1,25 @@
+<div class="field delivery-time">
+    <label>Chọn thời gian giao hàng:</label>
+    <div>
+        <input type="radio" id="delivery_same_day" name="delivery_time_option" value="same_day" checked>
+        <label for="delivery_same_day">Giao hàng trong ngày</label>
+    </div>
+    <div>
+        <input type="radio" id="delivery_pick_date" name="delivery_time_option" value="pick_date">
+        <label for="delivery_pick_date">Khách hàng tự chọn ngày giao hàng</label>
+        <input type="date" id="delivery_date" name="delivery_date" disabled min="<?= date('Y-m-d') ?>">
+    </div>
+</div>
+
+<script>
+    require(['jquery'], function($) {
+        $('input[name="delivery_time_option"]').on('change', function() {
+            if($(this).val() === 'pick_date') {
+                $('#delivery_date').prop('disabled', false);
+            } else {
+                $('#delivery_date').prop('disabled', true);
+            }
+        });
+    });
+</script>
+<?php

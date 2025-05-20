@@ -1,0 +1,22 @@
+<?php
+/** @var $block \Magenest\DeliveryTime\Block\Adminhtml\Order\View\Items\DeliveryTime */
+?>
+
+<table class="data order-items-delivery-time">
+    <thead>
+    <tr>
+        <th>SKU</th>
+        <th>Name</th>
+        <th>Delivery Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($block->getOrderItems() as $item): ?>
+        <tr>
+            <td><?php echo $block->escapeHtml($item->getSku()) ?></td>
+            <td><?php echo $block->escapeHtml($item->getName()) ?></td>
+            <td><?php echo $block->escapeHtml($block->getDeliveryTime($item) ?: 'N/A') ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
