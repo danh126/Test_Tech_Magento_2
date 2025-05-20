@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <section id="magenest_colorswitcher" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Color Switcher</label>
+            <tab>general</tab>
+            <resource>Magenest_ColorSwitcher::config</resource>
+
+            <group id="color_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Theme Colors</label>
+
+                <field id="custom_colors" translate="label" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Colors</label>
+                    <frontend_model>Magenest\ColorSwitcher\Block\Adminhtml\System\Config\Form\Field\ColorRow</frontend_model>
+                    <backend_model>Magenest\ColorSwitcher\Model\Config\Backend\Serialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
