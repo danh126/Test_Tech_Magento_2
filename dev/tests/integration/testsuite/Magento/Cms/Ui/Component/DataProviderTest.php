@@ -17,7 +17,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Checks Cms UI component data provider behaviour
+ * Checks Cms Ui component data provider behaviour
  *
  * @magentoAppArea adminhtml
  * @magentoDbIsolation enabled

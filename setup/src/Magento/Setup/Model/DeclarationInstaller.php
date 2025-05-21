@@ -49,7 +49,7 @@ class DeclarationInstaller
     /**
      * Install Schema in declarative way.
      *
-     * @param array $requestData -> Data params which comes from UI or from CLI.
+     * @param array $requestData -> Data params which comes from Ui or from CLI.
      * @return void
      */
     public function installSchema(array $requestData)

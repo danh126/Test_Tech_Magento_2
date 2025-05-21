@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <dataSource name="banner_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest\Banner\Model\Banner\DataProvider</argument>
+            <argument name="name" xsi:type="string">banner_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">banner_id</argument>
+            <argument name="requestFieldName" xsi:type="string">banner_id</argument>
+        </argument>
+    </dataSource>
+    <columns name="banner_columns">
+        <column name="banner_id">
+            <settings>
+                <filter>text</filter>
+                <label>ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label>Name</label>
+            </settings>
+        </column>
+        <column name="image">
+            <settings>
+                <filter>false</filter>
+                <label>Image</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Magenest\Banner\Ui\Component\Listing\Column\BannerActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">banner_id</item>
+                    <item name="actions" xsi:type="array">
+                        <item name="edit" xsi:type="array">
+                            <item name="href" xsi:type="url" path="magenest_banner/banner/edit"/>
+                            <item name="label" xsi:type="string">Edit</item>
+                        </item>
+                        <item name="delete" xsi:type="array">
+                            <item name="href" xsi:type="url" path="magenest_banner/banner/delete"/>
+                            <item name="label" xsi:type="string">Delete</item>
+                            <item name="confirm" xsi:type="array">
+                                <item name="title" xsi:type="string">Delete Banner</item>
+                                <item name="message" xsi:type="string">Are you sure you want to delete this banner?</item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

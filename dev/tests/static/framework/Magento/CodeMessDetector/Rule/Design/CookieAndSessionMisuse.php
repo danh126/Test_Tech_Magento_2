@@ -49,7 +49,7 @@ class CookieAndSessionMisuse extends AbstractRule implements ClassAware
     }
 
     /**
-     * Is given class an HTML UI data provider?
+     * Is given class an HTML Ui data provider?
      *
      * @param \ReflectionClass $class
      * @return bool
@@ -88,7 +88,7 @@ class CookieAndSessionMisuse extends AbstractRule implements ClassAware
     }
 
     /**
-     * Is given class an HTML UI Document?
+     * Is given class an HTML Ui Document?
      *
      * @param \ReflectionClass $class
      * @return bool
