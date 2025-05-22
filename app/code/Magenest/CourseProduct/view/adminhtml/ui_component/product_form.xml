@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/ui_configuration.xsd">
+
+    <dataSource name="product_form_data_source">
+        <dataProvider name="product_form_data_source"/>
+    </dataSource>
+
+    <!-- Fieldset: Course Details -->
+    <fieldset name="product-details">
+        <field name="course_start_datetime">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">datetime</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/date</item>
+                    <item name="label" xsi:type="string">Course Start Datetime</item>
+                    <item name="dataScope" xsi:type="string">course_start_datetime</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="options" xsi:type="array">
+                        <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+                        <item name="timeFormat" xsi:type="string">HH:mm:ss</item>
+                        <item name="showsTime" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-date" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="course_end_datetime">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">datetime</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/date</item>
+                    <item name="label" xsi:type="string">Course End Datetime</item>
+                    <item name="dataScope" xsi:type="string">course_end_datetime</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="options" xsi:type="array">
+                        <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+                        <item name="timeFormat" xsi:type="string">HH:mm:ss</item>
+                        <item name="showsTime" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-date" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <!-- Fieldset: Course Documents -->
+<!--    <fieldset name="course_documents_fieldset" sortOrder="100">-->
+<!--        <field name="course_documents">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/dynamic-rows</item>-->
+<!--                    <item name="label" xsi:type="string" translate="true">Tài liệu tham khảo</item>-->
+<!--                    <item name="addButtonLabel" xsi:type="string" translate="true">Thêm tài liệu</item>-->
+<!--                    <item name="template" xsi:type="string">ui/dynamic-rows/templates/grid</item>-->
+<!--                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>-->
+<!--                    <item name="columnsHeader" xsi:type="boolean">true</item>-->
+<!--                    <item name="deleteProperty" xsi:type="string">is_delete</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--            <settings>-->
+<!--                <dataType>text</dataType>-->
+<!--                <label translate="true">Tài liệu tham khảo</label>-->
+<!--            </settings>-->
+<!--            <formElements>-->
+<!--                <formElement name="dynamicRows">-->
+<!--                    <settings>-->
+<!--                        <template>ui/dynamic-rows/templates/grid</template>-->
+<!--                    </settings>-->
+<!--                    <children>-->
+<!--                        <column name="document_name">-->
+<!--                            <argument name="data" xsi:type="array">-->
+<!--                                <item name="config" xsi:type="array">-->
+<!--                                    <item name="label" xsi:type="string" translate="true">Tên tài liệu</item>-->
+<!--                                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                                </item>-->
+<!--                            </argument>-->
+<!--                        </column>-->
+<!--                        <column name="document_link">-->
+<!--                            <argument name="data" xsi:type="array">-->
+<!--                                <item name="config" xsi:type="array">-->
+<!--                                    <item name="label" xsi:type="string" translate="true">Link tài liệu</item>-->
+<!--                                    <item name="dataType" xsi:type="string">text</item>-->
+<!--                                </item>-->
+<!--                            </argument>-->
+<!--                        </column>-->
+<!--                    </children>-->
+<!--                </formElement>-->
+<!--            </formElements>-->
+<!--        </field>-->
+<!--    </fieldset>-->
+
+</form>
