@@ -2,10 +2,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="sales.order.grid.container">
-            <block class="Magenest\ExportOrderItems\Block\Adminhtml\ExportButton"
-                   name="magenest.export.order.items.button"
-                   template="Magenest_ExportOrderItems::export/button.phtml"/>
+        <referenceContainer name="content">
+            <block class="Magenest\ExportOrderItems\Block\Adminhtml\Order\ExportButton"
+                   name="export_order_items_button"
+                   template="Magenest_ExportOrderItems::order/export_button.phtml" />
         </referenceContainer>
     </body>
 </page>
