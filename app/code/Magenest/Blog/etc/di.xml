@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magenest\Blog\Api\BlogRepositoryInterface" type="Magenest\Blog\Model\BlogRepository"/>
+
+    <type name="Magento\Framework\App\RouterList">
+        <plugin name="magenest_blog_custom_router" type="Magenest\Blog\Plugin\Router\CustomRouter" sortOrder="10"/>
+    </type>
+</config>

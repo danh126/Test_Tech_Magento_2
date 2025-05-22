@@ -1,0 +1,8 @@
+<?php
+$customer = $block->getLayout()->createBlock('Magento\\Customer\\Block\\Account\Dashboard')->getCustomer();
+$isB2B = $customer->getCustomAttribute('is_b2b');
+$label = ($isB2B && $isB2B->getValue()) ? 'B2B' : 'Thông thường';
+?>
+<div class="account-b2b-type">
+    <strong>Loại tài khoản:</strong> <?= $label ?>
+</div>
