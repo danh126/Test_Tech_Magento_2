@@ -1,0 +1,7 @@
+<?php
+/** @var \Magento\Backend\Block\Template $block */
+$logoUrl = $block->getViewFileUrl('Magenest_CustomAdmin::images/mega.png');
+?>
+<a class="logo" href="<?= $block->getUrl('adminhtml/dashboard/index') ?>">
+    <img src="<?= $logoUrl ?>" alt="Custom Admin Logo" />
+</a>
