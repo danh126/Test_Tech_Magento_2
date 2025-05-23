@@ -1,0 +1,22 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/system_file.xsd">
+    <system>
+        <tab id="customer_time" translate="label" sortOrder="100">
+            <label>Customer Time Set</label>
+        </tab>
+
+        <section id="accesstime" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Access Time Settings</label>
+            <tab>customer_time</tab>
+
+            <group id="customer_group_time" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Group Access Time</label>
+
+                <field id="group_times" translate="label" type="custom" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Time per Customer Group</label>
+                    <frontend_model>Magenest\AccessTime\Block\Adminhtml\System\Config\Form\Field\CustomerGroupTime</frontend_model>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
