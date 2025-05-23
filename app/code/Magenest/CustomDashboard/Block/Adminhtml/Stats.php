@@ -38,6 +38,7 @@ class Stats extends Template
     }
 
     public function getMagentoModulesCount() {
+        //
         $modules = $this->moduleList->getAll();
         return count(array_filter(array_keys($modules), fn($name) => str_starts_with($name, 'Magento_')));
     }
