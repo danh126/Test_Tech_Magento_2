@@ -342,6 +342,7 @@ return [
         'Magenest_HelloWidget' => 1,
         'Magenest_Movie' => 0,
         'Magenest_SalesPatch' => 1,
+        'Magenest_TestConfig' => 1,
         'Magenest_VnRegion' => 1,
         'Mageplaza_Core' => 1,
         'NTD_CustomerAttribute' => 1,
