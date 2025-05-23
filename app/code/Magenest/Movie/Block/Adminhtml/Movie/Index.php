@@ -25,6 +25,6 @@ class Index extends Template
 
     public function getAddNewUrl()
     {
-        return $this->getUrl('magenest/movie/add');
+        return $this->getUrl('magenest/movie/edit');
     }
 }
