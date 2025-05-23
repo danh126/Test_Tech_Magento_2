@@ -1,0 +1,9 @@
+<?php /** @var $block \Magenest\CustomerAvatar\Block\Adminhtml\Customer\AvatarTab */ ?>
+
+<div class="admin__field">
+    <?php if ($block->getAvatarUrl()): ?>
+        <img src="<?php echo $block->getAvatarUrl(); ?>" alt="Customer Avatar" style="max-width: 150px; max-height: 150px;"/>
+    <?php else: ?>
+        <p><?php echo __('No avatar uploaded.'); ?></p>
+    <?php endif; ?>
+</div>

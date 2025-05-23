@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product\DataProvider">
+        <plugin name="magenest_courseproduct_product_data_provider_plugin" type="Magenest\CourseProduct\Plugin\ProductDataProviderPlugin" />
+    </type>
+
+    <type name="Magento\Catalog\Ui\DataProvider\Product\Form\ModifierPool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="hide_auto_datetime_fields" xsi:type="array">
+                    <item name="class" xsi:type="string">Magenest\CourseProduct\Ui\DataProvider\Product\Form\Modifier\HideAutoDatetimeFields</item>
+                    <item name="sortOrder" xsi:type="number">5</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
