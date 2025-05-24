@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote_item" resource="default" engine="innodb" comment="Quote Item Table Extension">
+        <column xsi:type="text" name="delivery_time" nullable="true" comment="Delivery Time Option"/>
+    </table>
+
+    <table name="sales_order_item" resource="default" engine="innodb" comment="Sales Order Item Extension">
+        <column xsi:type="text" name="delivery_time" nullable="true" comment="Delivery Time Option"/>
+    </table>
+</schema>

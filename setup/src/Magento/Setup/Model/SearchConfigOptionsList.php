@@ -142,7 +142,7 @@ class SearchConfigOptionsList
     }
 
     /**
-     * Get UI friendly list of available search engines
+     * Get Ui friendly list of available search engines
      *
      * @return array
      */

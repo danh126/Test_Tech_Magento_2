@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <dataSource name="banner_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest\Banner\Model\Banner\DataProvider</argument>
+            <argument name="name" xsi:type="string">banner_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">banner_id</argument>
+            <argument name="requestFieldName" xsi:type="string">banner_id</argument>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">General</item>
+        </argument>
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="enabled">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Enabled</item>
+                    <item name="dataScope" xsi:type="string">enabled</item>
+                    <item name="options" xsi:type="array">
+                        <item name="1" xsi:type="array">
+                            <item name="label" xsi:type="string">Yes</item>
+                            <item name="value" xsi:type="number">1</item>
+                        </item>
+                        <item name="0" xsi:type="array">
+                            <item name="label" xsi:type="string">No</item>
+                            <item name="value" xsi:type="number">0</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="link">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Link</item>
+                    <item name="dataScope" xsi:type="string">link</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="add_text">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Additional Text</item>
+                    <item name="dataScope" xsi:type="string">add_text</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">image</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="formElement" xsi:type="string">imageUploader</item>
+                    <item name="label" xsi:type="string" translate="true">Banner Image</item>
+                    <item name="dataScope" xsi:type="string">image</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="magenest_banner/banner/imageUpload"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+    </fieldset>
+</form>

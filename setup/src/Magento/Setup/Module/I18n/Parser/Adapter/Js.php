@@ -23,7 +23,7 @@ class Js extends AbstractAdapter
      * Covers in HTML
      * <a data-bind="attr: { title: $t('Title'), href: '#'} "></a>
      * <input type="text" data-bind="attr: { placeholder: $t('Placeholder'), title: $t('Title') }" />
-     * Double quotes are not handled correctly in the `attr` binding. Move phrase to the UI component property if needed
+     * Double quotes are not handled correctly in the `attr` binding. Move phrase to the Ui component property if needed
      */
     public const REGEX_TRANSLATE_FUNCTION = '/\\$t\(\s*([\'"])(.*?[^\\\])\1.*?[),]/';
 

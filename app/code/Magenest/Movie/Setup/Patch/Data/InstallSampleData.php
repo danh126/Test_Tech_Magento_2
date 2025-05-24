@@ -68,7 +68,7 @@ class InstallSampleData implements DataPatchInterface
         $movieIds = $connection->fetchCol("SELECT movie_id FROM " . $setup->getTable('magenest_movie'));
         $actorIds = $connection->fetchCol("SELECT actor_id FROM " . $setup->getTable('magenest_actor'));
 
-        // Insert Movie-Actor relationships
+        // Insert Banner-Actor relationships
         $connection->insertMultiple(
             $setup->getTable('magenest_movie_actor'),
             [

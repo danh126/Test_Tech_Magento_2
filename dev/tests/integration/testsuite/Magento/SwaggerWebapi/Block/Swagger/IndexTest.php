@@ -39,7 +39,7 @@ class IndexTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test that the Swagger UI outputs rest as the default when there is no type parameter supplied via URL.
+     * Test that the Swagger Ui outputs rest as the default when there is no type parameter supplied via URL.
      */
     public function testDefaultSchemaUrlOutput()
     {
@@ -47,7 +47,7 @@ class IndexTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test that Swagger UI outputs the supplied store code when it is specified.
+     * Test that Swagger Ui outputs the supplied store code when it is specified.
      */
     public function testSchemaUrlOutputWithStore()
     {

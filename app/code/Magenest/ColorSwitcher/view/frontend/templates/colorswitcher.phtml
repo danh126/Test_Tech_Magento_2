@@ -1,0 +1,27 @@
+<?php
+/** @var \Magenest\ColorSwitcher\Helper\Data $helper */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$helper = $objectManager->get(\Magenest\ColorSwitcher\Helper\Data::class);
+
+$colors = $helper->getColorOptions();
+?>
+
+<div id="color-switcher" data-bind="scope: 'colorSwitcher'" data-role="js-component">
+    <select data-bind="options: options, optionsText: 'label', optionsValue: 'value', value: selectedColor"></select>
+    <pre><?= json_encode($colors, JSON_PRETTY_PRINT); ?></pre>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#color-switcher": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "colorSwitcher": {
+                        "component": "Magenest_ColorSwitcher/js/color-switcher",
+                        "options": <?= json_encode(array_merge([['label' => 'Default', 'value' => 'default']], $colors)) ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
