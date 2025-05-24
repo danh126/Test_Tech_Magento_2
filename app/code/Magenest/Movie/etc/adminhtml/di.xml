@@ -36,6 +36,7 @@
                 <item name="magenest_movie_listing_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Movie\Collection</item>
                 <item name="magenest_director_listing_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Director\Collection</item>
                 <item name="magenest_actor_listing_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Actor\Collection</item>
+                <item name="magenest_movie_form_data_source" xsi:type="string">Magenest\Movie\Ui\DataProvider\Movie\Collection</item>
             </argument>
         </arguments>
     </type>

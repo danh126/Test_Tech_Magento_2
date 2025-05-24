@@ -2,8 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="magenest_export" frontName="magenest_export">
-            <module name="Magenest_ExportOrderItems"/>
+        <route id="magenest_dashboard" frontName="magenest_dashboard">
+            <module name="Magenest_CustomDashboard"/>
         </route>
     </router>
 </config>

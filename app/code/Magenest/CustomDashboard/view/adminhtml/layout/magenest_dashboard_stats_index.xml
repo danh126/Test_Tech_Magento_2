@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="admin-2columns-left"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magenest\ExportOrderItems\Block\Adminhtml\Order\ExportButton"
-                   name="export_order_items_button"
-                   template="Magenest_ExportOrderItems::order/export_button.phtml" />
+            <block class="Magenest\CustomDashboard\Block\Adminhtml\Stats"
+                   name="magenest.customdashboard.stats"
+                   template="Magenest_CustomDashboard::stats.phtml"/>
         </referenceContainer>
     </body>
 </page>

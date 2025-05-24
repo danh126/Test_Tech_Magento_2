@@ -8,6 +8,8 @@
 /.idea/
 /composer.phar
 /.gitmodules
+/app/etc/config.php
+/app/etc/env.php
 
 # Environment specific files
 /.env

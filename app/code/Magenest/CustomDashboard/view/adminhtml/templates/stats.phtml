@@ -1,0 +1,61 @@
+<?php
+/** @var $block \Magenest\CustomDashboard\Block\Adminhtml\Stats */
+?>
+
+<div class="admin__page-section">
+    <div class="admin__page-section-title">
+        <h1><?= __('Module Statistics') ?></h1>
+    </div>
+    <div class="admin__fieldset">
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Magento Modules:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getMagentoModulesCount(); ?></span>
+            </div>
+        </div>
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Custom/Other Modules:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getCustomModulesCount(); ?></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="admin__page-section">
+    <div class="admin__page-section-title">
+        <h1><?= __('Store Entities Statistics') ?></h1>
+    </div>
+    <div class="admin__fieldset">
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Customers:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getCustomerCount(); ?></span>
+            </div>
+        </div>
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Products:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getProductCount(); ?></span>
+            </div>
+        </div>
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Orders:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getOrderCount(); ?></span>
+            </div>
+        </div>
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Invoices:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getInvoiceCount(); ?></span>
+            </div>
+        </div>
+        <div class="admin__field">
+            <label class="admin__field-label"><?= __('Credit Memos:') ?></label>
+            <div class="admin__field-control">
+                <span><?= $block->getCreditmemoCount(); ?></span>
+            </div>
+        </div>
+    </div>
+</div>
