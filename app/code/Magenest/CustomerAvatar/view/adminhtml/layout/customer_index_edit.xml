@@ -1,8 +1,12 @@
-<?xml version="1.0" ?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="customer_edit_tabs">
-            <block class="Magenest\CustomerAvatar\Block\Adminhtml\Customer\AvatarTab" name="customer.avatar.tab" template="customer/avatar_tab.phtml" after="account">
+            <block class="Magenest\CustomerAvatar\Block\Adminhtml\Customer\AvatarTab"
+                   name="customer.avatar.tab"
+                   template="Magenest_CustomerAvatar::customer/avatar_tab.phtml"
+                   after="account">
                 <arguments>
                     <argument name="tab_label" xsi:type="string">Avatar</argument>
                     <argument name="tab_title" xsi:type="string">Avatar</argument>

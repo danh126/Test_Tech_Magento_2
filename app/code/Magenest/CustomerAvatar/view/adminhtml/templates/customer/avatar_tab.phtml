@@ -1,9 +1,27 @@
-<?php /** @var $block \Magenest\CustomerAvatar\Block\Adminhtml\Customer\AvatarTab */ ?>
+<?php
+/** @var $block \Magenest\CustomerAvatar\Block\Adminhtml\Customer\AvatarTab */
+$customer = $block->getCustomer();
+?>
 
-<div class="admin__field">
-    <?php if ($block->getAvatarUrl()): ?>
-        <img src="<?php echo $block->getAvatarUrl(); ?>" alt="Customer Avatar" style="max-width: 150px; max-height: 150px;"/>
-    <?php else: ?>
-        <p><?php echo __('No avatar uploaded.'); ?></p>
-    <?php endif; ?>
-</div>
+<form id="customer-avatar-form" action="<?= $block->getUrl('customeravatar/avatar/save', ['id' => $customer->getId()]) ?>" method="post" enctype="multipart/form-data">
+    <?= $block->getBlockHtml('formkey') ?>
+    <fieldset class="admin__fieldset">
+        <legend><?= __('Upload Avatar') ?></legend>
+
+        <div class="admin__field">
+            <label class="admin__field-label" for="avatar"><?= __('Avatar Image') ?></label>
+            <div class="admin__field-control">
+                <input type="file" name="avatar" id="avatar" accept="image/*"/>
+                <?php if ($customer->getAvatar()): ?>
+                    <p><img src="<?= $block->getUrl('pub/media/customer/avatar/' . $customer->getAvatar()) ?>" alt="Avatar" width="100"/></p>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="admin__actions">
+            <button type="submit" class="action-default scalable">
+                <span><?= __('Save Avatar') ?></span>
+            </button>
+        </div>
+    </fieldset>
+</form>

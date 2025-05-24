@@ -30,11 +30,13 @@ class Avatar extends AbstractBackend
             $file = $value[0];
             if (isset($file['tmp_name']) && $file['tmp_name']) {
                 try {
+                    // Tạo uploader với tên input là $attributeCode
                     $uploader = $this->uploaderFactory->create(['fileId' => $attributeCode]);
                     $uploader->setAllowedExtensions(['jpg', 'jpeg', 'png', 'gif']);
                     $uploader->setAllowRenameFiles(true);
                     $uploader->setFilesDispersion(true);
 
+                    // Lấy thư mục media để lưu file
                     $mediaDirectory = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA);
                     $result = $uploader->save($mediaDirectory->getAbsolutePath('customer/avatar'));
 
@@ -42,13 +44,15 @@ class Avatar extends AbstractBackend
                         throw new LocalizedException(__('File cannot be saved to path: %1', $mediaDirectory->getAbsolutePath('customer/avatar')));
                     }
 
-                    $filePath = 'customer/avatar' . $result['file'];
+                    // Nối đường dẫn đúng với dấu /
+                    $filePath = 'customer/avatar/' . ltrim($result['file'], '/');
                     $object->setData($attributeCode, $filePath);
                 } catch (\Exception $e) {
                     throw new LocalizedException(__('Avatar upload error: %1', $e->getMessage()));
                 }
             }
         } elseif (is_string($value) && $value === '') {
+            // Nếu xoá ảnh thì set null
             $object->setData($attributeCode, null);
         }
 
