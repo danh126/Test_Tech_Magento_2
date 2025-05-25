@@ -4,34 +4,41 @@ namespace Magenest\Movie\Model\Movie;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
+use Magento\Framework\App\RequestInterface;
 
 class DataProvider extends AbstractDataProvider
 {
+    protected $collection;
     protected $loadedData;
+    protected $request;
 
     public function __construct(
         $name,
         $primaryFieldName,
         $requestFieldName,
         CollectionFactory $collectionFactory,
+        RequestInterface $request,
         array $meta = [],
         array $data = []
-    ) {
+    )
+    {
         $this->collection = $collectionFactory->create();
+        $this->request = $request;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
     public function getData()
     {
-        if (isset($this->loadedData)) {
-            return $this->loadedData;
+        $data = [];
+        $movieId = $this->request->getParam($this->requestFieldName);
+
+        if ($movieId) {
+            $movie = $this->collection->getItemById($movieId);
+            if ($movie) {
+                $data[$movieId]['data'] = $movie->getData();
+            }
         }
 
-        $items = $this->collection->getItems();
-        foreach ($items as $item) {
-            $this->loadedData[$item->getId()] = $item->getData();
-        }
-
-        return $this->loadedData;
+        return $data;
     }
 }

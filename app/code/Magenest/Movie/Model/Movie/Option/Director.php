@@ -16,12 +16,14 @@ class Director implements OptionSourceInterface
 
     public function toOptionArray()
     {
-        $collection = $this->collectionFactory->create();
-        $options = [];
+        $options = [
+            ['value' => '', 'label' => __('Select Director')]
+        ];
 
+        $collection = $this->collectionFactory->create();
         foreach ($collection as $director) {
             $options[] = [
-                'value' => $director->getId(),
+                'value' => $director->getDirectorId(),
                 'label' => $director->getName()
             ];
         }
