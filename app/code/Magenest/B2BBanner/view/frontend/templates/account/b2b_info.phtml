@@ -1,8 +1,38 @@
 <?php
-$customer = $block->getLayout()->createBlock('Magento\\Customer\\Block\\Account\Dashboard')->getCustomer();
+$customer = $block->getLayout()->createBlock('Magento\\Customer\\Block\\Account\\Dashboard')->getCustomer();
 $isB2B = $customer->getCustomAttribute('is_b2b');
-$label = ($isB2B && $isB2B->getValue()) ? 'B2B' : 'Thông thường';
+$isB2BValue = ($isB2B && $isB2B->getValue());
+$label = $isB2BValue ? 'B2B' : 'Thông thường';
+$class = $isB2BValue ? 'b2b' : 'normal';
 ?>
-<div class="account-b2b-type">
+<style>
+    .account-b2b-type {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        padding: 12px 20px;
+        border-radius: 8px;
+        max-width: 250px;
+        margin: 10px 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        display: inline-block;
+        font-weight: 600;
+        user-select: none;
+    }
+    .account-b2b-type strong {
+        color: #0070f3;
+        margin-right: 8px;
+    }
+    .account-b2b-type.b2b {
+        background-color: #d1f7d6;
+        color: #155724;
+    }
+    .account-b2b-type.normal {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+</style>
+
+<div class="account-b2b-type <?= $class ?>">
     <strong>Loại tài khoản:</strong> <?= $label ?>
 </div>
