@@ -61,7 +61,10 @@ class AddVnRegionAttribute implements DataPatchInterface
             $attribute->setData('used_in_forms', [
                 'adminhtml_customer_address',
                 'customer_address_edit',
-                'customer_register_address'
+                'customer_register_address',
+                'customer_address',
+                'checkout_register',
+                'adminhtml_checkout'
             ]);
 
             $attribute->save();
