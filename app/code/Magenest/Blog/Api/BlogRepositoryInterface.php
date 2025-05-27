@@ -6,6 +6,13 @@ use Magenest\Blog\Api\Data\BlogInterface;
 interface BlogRepositoryInterface
 {
     /**
+     * Get all blogs
+     *
+     * @return BlogInterface[]
+     */
+    public function getAll();
+
+    /**
      * Save blog data
      *
      * @param \Magenest\Blog\Api\Data\BlogInterface $blog
@@ -23,6 +30,14 @@ interface BlogRepositoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getById($id);
+    /**
+     * Update blog theo ID
+     *
+     * @param int $id
+     * @param \Magenest\Blog\Api\Data\BlogUpdateInterface $data
+     * @return \Magenest\Blog\Api\Data\BlogInterface
+     */
+    public function update($id, \Magenest\Blog\Api\Data\BlogUpdateInterface $data);
 
     /**
      * Delete blog

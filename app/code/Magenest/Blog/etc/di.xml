@@ -5,4 +5,7 @@
     <type name="Magento\Framework\App\RouterList">
         <plugin name="magenest_blog_custom_router" type="Magenest\Blog\Plugin\Router\CustomRouter" sortOrder="10"/>
     </type>
+
+    <preference for="Magenest\Blog\Api\Data\BlogInterface" type="Magenest\Blog\Model\Blog" />
+    <preference for="Magenest\Blog\Api\Data\BlogUpdateInterface" type="Magenest\Blog\Model\Data\BlogUpdate" />
 </config>
