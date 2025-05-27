@@ -1,0 +1,7 @@
+<?php
+/** @var \Magenest\Blog\Block\View $block */
+$blog = $block->getBlog();
+?>
+
+<h1><?= $blog->getTitle(); ?></h1>
+<div><?= $blog->getContent(); ?></div>
