@@ -19,7 +19,6 @@
                 <item name="class" xsi:type="string">back</item>
                 <item name="url" xsi:type="string">*/*/index</item>
             </item>
-
         </item>
     </argument>
     <settings>
@@ -54,20 +53,20 @@
         <field name="movie_id" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">data</item>
+                    <item name="source" xsi:type="string">movie</item>
                 </item>
             </argument>
             <settings>
                 <dataType>text</dataType>
                 <visible>false</visible>
-                <dataScope>data.movie_id</dataScope>
+                <dataScope>movie_id</dataScope>
             </settings>
         </field>
         <field name="name" formElement="input">
             <settings>
                 <dataType>text</dataType>
                 <label translate="true">Movie Name</label>
-                <dataScope>data.name</dataScope>
+                <dataScope>name</dataScope>
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
@@ -77,29 +76,25 @@
             <settings>
                 <dataType>text</dataType>
                 <label translate="true">Description</label>
-                <dataScope>data.description</dataScope>
+                <dataScope>description</dataScope>
             </settings>
         </field>
-        <field name="rating">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">number</item>
-                    <item name="label" xsi:type="string" translate="true">Rating</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="inputType" xsi:type="string">number</item>
-                    <item name="dataScope" xsi:type="string">data.rating</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="validate-digits" xsi:type="boolean">true</item>
-                        <item name="validate-digits-range" xsi:type="string">1-10</item>
-                    </item>
-                </item>
-            </argument>
+        <field name="rating" formElement="input">
+            <settings>
+                <dataType>number</dataType>
+                <label translate="true">Rating</label>
+                <dataScope>rating</dataScope>
+                <validation>
+                    <rule name="validate-digits" xsi:type="boolean">true</rule>
+                    <rule name="validate-digits-range" xsi:type="string">1-10</rule>
+                </validation>
+            </settings>
         </field>
         <field name="director_id" formElement="select">
             <settings>
                 <dataType>text</dataType>
                 <label translate="true">Director</label>
-                <dataScope>data.director_id</dataScope>
+                <dataScope>director_id</dataScope>
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>

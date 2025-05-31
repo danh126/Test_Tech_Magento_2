@@ -29,16 +29,31 @@ class DataProvider extends AbstractDataProvider
 
     public function getData()
     {
-        $data = [];
-        $movieId = $this->request->getParam($this->requestFieldName);
+        if (isset($this->loadedData)) {
+            return $this->loadedData;
+        }
+
+        $movieId = $this->request->getParam('id');
 
         if ($movieId) {
             $movie = $this->collection->getItemById($movieId);
             if ($movie) {
-                $data[$movieId]['data'] = $movie->getData();
+                $this->loadedData[$movieId] = $movie->getData();
+            } else {
+                // Không tìm thấy ID → tránh lỗi
+                $this->loadedData[$movieId] = [];
             }
+        } else {
+            // Form Add New → dữ liệu mặc định rỗng
+            $this->loadedData['new'] = [
+                'movie_id' => null,
+                'name' => '',
+                'description' => '',
+                'rating' => '',
+                'director_id' => ''
+            ];
         }
 
-        return $data;
+        return $this->loadedData;
     }
 }

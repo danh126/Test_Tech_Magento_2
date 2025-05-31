@@ -20,10 +20,18 @@ class ColorRow extends Field
 
         $html .= '<tbody>';
         $html .= '<tr>';
-        $html .= '<td style="border:1px solid #ccc; padding:5px;"><input type="text" name="' . $elementName . '[0][name]" /></td>';
-        $html .= '<td style="border:1px solid #ccc; padding:5px;"><input type="text" name="' . $elementName . '[0][hex]" oninput="updatePreview(this)" /></td>';
-        $html .= '<td style="border:1px solid #ccc; padding:5px;"><div style="width:30px; height:20px; border:1px solid #e12e2e;" class="color-preview"></div></td>';
-        $html .= '<td style="border:1px solid #ccc; padding:5px;"><button type="button" onclick="addRow()">+</button></td>';
+        $html .= '<td style="border:1px solid #ccc; padding:5px;">
+                    <input type="text" name="' . $elementName . '[0][name]" />
+                  </td>';
+        $html .= '<td style="border:1px solid #ccc; padding:5px;">
+                    <input type="color" name="' . $elementName . '[0][hex]" onchange="updatePreview(this)" />
+                  </td>';
+        $html .= '<td style="border:1px solid #ccc; padding:5px;">
+                    <div style="width:30px; height:20px; border:1px solid #e12e2e;" class="color-preview"></div>
+                  </td>';
+        $html .= '<td style="border:1px solid #ccc; padding:5px;">
+                    <button type="button" onclick="addRow()">+</button>
+                  </td>';
         $html .= '</tr>';
         $html .= '</tbody>';
         $html .= '</table>';
@@ -36,10 +44,10 @@ class ColorRow extends Field
                 row.style.border = "1px solid #ccc";
                 row.innerHTML = `
                     <td style="border:1px solid #ccc; padding:5px;">
-                        <input type="text" name="' . $elementName . '[${rowCount}][name]" />
+                        <input type="text" name="' . $elementName . '[\${rowCount}][name]" />
                     </td>
                     <td style="border:1px solid #ccc; padding:5px;">
-                        <input type="text" name="' . $elementName . '[${rowCount}][hex]" oninput="updatePreview(this)" />
+                        <input type="color" name="' . $elementName . '[\${rowCount}][hex]" onchange="updatePreview(this)" />
                     </td>
                     <td style="border:1px solid #ccc; padding:5px;">
                         <div style="width:30px; height:20px; border:1px solid #000;" class="color-preview"></div>
@@ -51,13 +59,9 @@ class ColorRow extends Field
             }
 
             function updatePreview(input) {
-                const val = input.value.trim();
+                const val = input.value;
                 const previewDiv = input.parentElement.nextElementSibling.querySelector(".color-preview");
-                if(/^#([0-9A-Fa-f]{3}){1,2}$/.test(val)) {
-                    previewDiv.style.backgroundColor = val;
-                } else {
-                    previewDiv.style.backgroundColor = "transparent";
-                }
+                previewDiv.style.backgroundColor = val;
             }
         </script>';
 

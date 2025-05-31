@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="m22" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" editBeforeRun="true" focusToolWindowBeforeRun="true" singleton="false" server_name="magento test">
+    <method v="2" />
+  </configuration>
+</component>
